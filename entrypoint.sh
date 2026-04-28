@@ -65,9 +65,9 @@ group "feeds update -a"
 ./scripts/feeds update -a
 endgroup
 
-sed -i 's/default OPENCONNECT_GNUTLS/default OPENCONNECT_OPENSSL/' net/openconnect/Config.in
-grep OPENCONNECT_GNUTLS net/openconnect/Config.in && exit 1
-grep OPENCONNECT_OPENSSL net/openconnect/Config.in || exit 1
+sed -i 's/default OPENCONNECT_GNUTLS/default OPENCONNECT_OPENSSL/' feeds/packages/net/openconnect/Config.in
+grep OPENCONNECT_GNUTLS feeds/packages/net/openconnect/Config.in && exit 1
+grep OPENCONNECT_OPENSSL feeds/packages/net/openconnect/Config.in || exit 1
 
 group "make defconfig"
 make defconfig
