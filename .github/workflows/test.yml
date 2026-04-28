@@ -11,12 +11,8 @@ jobs:
       fail-fast: false
       matrix:
         release:
-          - master
-          - 24.10.4
+          - 23.05.3
         arch:
-          - aarch64_generic
-          - arm_cortex-a15_neon-vfpv4
-          - mips_24kc
           - x86_64
 
     steps:
@@ -31,7 +27,7 @@ jobs:
           ARCH: ${{ matrix.arch }}-${{ matrix.release }}
           ARTIFACTS_DIR: ${{ github.workspace }}/artifacts
           FEED_DIR: ${{ github.workspace }}/feed
-          PACKAGES: vim privoxy
+          PACKAGES: openconnect
 
       - name: Verify packages saved
         run: find artifacts/bin/packages/${{ matrix.arch }}/packages/ -maxdepth 1 -name '*.[ai]pk' -type f | grep .
