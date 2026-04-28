@@ -1,7 +1,7 @@
 name: Test
 
 on:
-  release: 
+  workflow_call:
 
 jobs:
   build:
